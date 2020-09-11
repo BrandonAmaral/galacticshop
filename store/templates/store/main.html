@@ -1,12 +1,23 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     {% block head_block %}
     {% endblock %}
 </head>
 <body>
+    <header class="header">
+        <a href="{% url 'store' %}" class="logo"><img src="#" alt="Logo" width="40" height="40"></a>
+        <nav>
+          <ul class="menu">
+            <li><a href="{% url 'cart' %}"><img width="30" height="30" src="{% static 'images/cart.png' %}" alt="Cart"></a></li>
+            <li><a href="#"><img width="30" height="30" src="{% static 'images/account.png' %}" alt="Account"></a></li>
+          </ul>
+        </nav>
+    </header>
     {% block body_block %}
     {% endblock %}
 </body>
